@@ -16,13 +16,13 @@ export const Download: FC<Props> = ({value}) => {
         <Stack mt={4} spacing={4} direction={'row'} align={'center'} justify={'center'}>
             <Text fontSize={'sm'}>Download:</Text>
             <Stack spacing={4} direction={'row'} align={'center'}>
-                <Button size={'sm'} isDisabled={isDisabled}
+                <Button colorScheme={'green'} size={'sm'} isDisabled={isDisabled}
                         onClick={() => downloadImageByType(value ?? '', 'svg')}>.svg</Button>
-                <Button size={'sm'} isDisabled={isDisabled}
+                <Button colorScheme={'green'} size={'sm'} isDisabled={isDisabled}
                         onClick={() => downloadImageByType(value ?? '', 'image/jpeg')}>.jpeg</Button>
-                <Button size={'sm'} isDisabled={isDisabled}
+                <Button colorScheme={'green'} size={'sm'} isDisabled={isDisabled}
                         onClick={() => downloadImageByType(value ?? '', 'image/png')}>.png</Button>
-                <Button size={'sm'} isDisabled={isDisabled}
+                <Button colorScheme={'green'} size={'sm'} isDisabled={isDisabled}
                         onClick={() => downloadImageByType(value ?? '', 'image/webp')}>.webp</Button>
             </Stack>
         </Stack>
