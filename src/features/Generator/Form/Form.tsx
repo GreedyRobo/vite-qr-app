@@ -1,25 +1,15 @@
-import {Box, Button, Input} from "@chakra-ui/react";
-import {FC, useState} from "react";
+import {Box, Input} from "@chakra-ui/react";
+import {FC} from "react";
 
 interface Props {
-    onComplete: (value: string) => void;
+    onInput: (value: string) => void;
 }
 
-export const Form: FC<Props> = ({onComplete}) => {
-    const [value, setValue] = useState<string>('');
-
-    const onClick = () => {
-        onComplete(value);
-    };
+export const Form: FC<Props> = ({onInput}) => {
 
     return (
         <Box>
-            <Box>
-                <Input placeholder={'Please enter text...'} value={value} onChange={(evt) => setValue(evt.target.value)}/>
-            </Box>
-            <Box display={'flex'} justifyContent={'center'} mt={6}>
-                <Button size={'lg'} isDisabled={!value} onClick={onClick}>Generate</Button>
-            </Box>
+            <Input placeholder={'Enter url...'} onInput={(evt) => onInput(evt.currentTarget.value)}/>
         </Box>
     )
 }

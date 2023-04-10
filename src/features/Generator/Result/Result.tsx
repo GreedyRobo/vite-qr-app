@@ -1,5 +1,5 @@
-import {Box, Center, Image, Text} from "@chakra-ui/react";
-import {Placeholder} from "./Placeholder";
+import {Box, Center, Image} from "@chakra-ui/react";
+import {DownloadIcon} from "@chakra-ui/icons";
 import {FC, useEffect, useState} from "react";
 import QrCode from "qrcode";
 
@@ -26,10 +26,9 @@ export const Result: FC<Props> = ({value}) => {
     return (
         <Center flexDir={'column'}>
             <Box p={3} border={'1px'} borderColor={'gray.200'} w={300} h={300} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                {!content && <Placeholder/>}
+                {!content && <DownloadIcon w={50} h={50} color={'gray.200'}/>}
                 {!!content && <Image w={300} src={content} alt={'Generated Code'}/>}
             </Box>
-            <Text fontSize='sm' mt={2}>{value ?? "\u00A0"}</Text>
         </Center>
     )
 }

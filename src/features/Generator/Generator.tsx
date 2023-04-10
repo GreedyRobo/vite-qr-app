@@ -8,18 +8,14 @@ import {Download} from "./Download";
 export const Generator = () => {
     const [value, setValue] = useState<string | null>(null);
 
-    const onSubmit = async (value: string) => {
-        setValue(value);
-    }
-
     return (
         <Box>
-            <Result value={value}/>
-            <Box mt={8} display={'flex'} justifyContent={'center'}>
-                <Download value={value}/>
-            </Box>
+            <Box><Result value={value}/></Box>
             <Box mt={8}>
-                <Form onComplete={onSubmit}/>
+                <Form onInput={(value) => setValue(value?.length ? value : null)}/>
+            </Box>
+            <Box>
+                <Download value={value}/>
             </Box>
         </Box>
     )
